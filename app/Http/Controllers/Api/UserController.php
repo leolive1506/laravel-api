@@ -3,19 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\ProductCollection;
-use App\Http\Resources\ProductResource;
-use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class UserController extends Controller
 {
-    private $product;
-
-    public function __construct(Product $product)
-    {
-        $this->product = $product;
-    }
     /**
      * Display a listing of the resource.
      *
@@ -23,8 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = $this->product->orderBy('id', 'desc')->paginate(5);
-        return new ProductCollection($products);
+        //
     }
 
     /**
@@ -35,9 +25,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $product = $this->product->create($data);
-        return response()->json($product);
+        //
     }
 
     /**
@@ -48,8 +36,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = $this->product->findOrFail($id);
-        return new ProductResource($product);
+        //
     }
 
     /**
@@ -61,12 +48,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-
-        $product = $this->product->findOrFail($id);
-        $product->update($data);
-
-        return response()->json($product);
+        //
     }
 
     /**
@@ -77,7 +59,6 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $this->product::destroy($id);
-        return response()->json(['data' => ['message' => 'Produto removido com sucesso']]);
+        //
     }
 }
