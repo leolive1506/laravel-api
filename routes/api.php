@@ -22,3 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('/products', ProductController::class);
+Route::get('/autenticado', function () {
+    return ['message' => 'voce está autenticado'];
+})->middleware('auth.basic');

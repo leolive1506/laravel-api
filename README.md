@@ -76,3 +76,12 @@ JsonResource::withoutWrapping();
 ```php
 JsonResource::wrap('wrap');
 ```
+
+# Autenticação basica
+```php
+Route::get('/autenticado', function () {
+    return ['message' => 'voce está autenticado'];
+})->middleware('auth.basic');
+```
+
+- Testar em basic auth (insominia) com usuários e senha existente   
