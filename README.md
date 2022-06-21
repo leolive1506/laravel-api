@@ -85,3 +85,14 @@ Route::get('/autenticado', function () {
 ```
 
 - Testar em basic auth (insominia) com usuários e senha existente   
+
+# Filtros
+- Filtro pro campo
+```php
+// products?fields=name,price
+$fields = $request->get('fields');
+
+if (!empty($fields)) {
+    $products = $products->selectRaw($fields);
+}
+```
