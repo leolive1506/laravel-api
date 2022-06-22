@@ -56,7 +56,7 @@ class ProductTest extends TestCase
     public function test_check_if_product_show_method_is_working()
     {
         $product = Product::factory()->create();
-        $response = $this->get('/api/products/' . $product->id);
+        $response = $this->getJson('/api/products/' . $product->id);
 
         $response
             ->assertStatus(200)
