@@ -96,3 +96,32 @@ if (!empty($fields)) {
     $products = $products->selectRaw($fields);
 }
 ```
+
+# Testing
+## Tdd (test-driven  development)
+- Desenvolvimento dirigido por teste
+
+## Teste laravel
+- Test feature
+    - Teste app mais como um todo, comunicação, rota, etc
+- Test Unit
+    - Teste unitário, testar algo isoladamente
+
+- run migration env testing
+```sh
+# env.testing
+php artisan --env=testing migrate
+```
+
+- Criar um test
+```sh
+php artisan make:test ProductTest
+```
+
+- Executar teste 
+```sh
+# phpunit
+.\vendor\bin\phpunit
+# laravel
+php artisan test
+```
